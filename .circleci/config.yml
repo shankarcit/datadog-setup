@@ -31,15 +31,15 @@
             aws-region: << parameters.aws-region >>
             install-kubectl: true
         - kubernetes/create-or-update-resource:
-            get-rollout-status: true
+            get-rollout-status: false
             resource-file-path: ~/deployment/configs/datadog/cluster-agent-rbac.yaml
             resource-name: ClusterRole/datadog-cluster-agent
         - kubernetes/create-or-update-resource:
-            get-rollout-status: true
+            get-rollout-status: false
             resource-file-path: ~/deployment/configs/datadog/datadog-rbac.yaml
             resource-name: ClusterRole/datadog-agent
         - kubernetes/create-or-update-resource:
-            get-rollout-status: true
+            get-rollout-status: false
             resource-file-path: ~/deployment/configs/datadog/dca-secret.yaml
             resource-name: secret/datadog-auth-token
         - kubernetes/create-or-update-resource:
@@ -51,15 +51,15 @@
             resource-file-path: ~/deployment/configs/datadog/datadog-agent.yaml
             resource-name: DaemonSet/datadog-agent
         - kubernetes/create-or-update-resource:
-            get-rollout-status: true
+            get-rollout-status: false
             resource-file-path: ~/deployment/configs/state-metrics/cluster-role.yaml
             resource-name: ClusterRole/kube-state-metrics
         - kubernetes/create-or-update-resource:
-            get-rollout-status: true
+            get-rollout-status: false
             resource-file-path: ~/deployment/configs/state-metrics/cluster-role-binding.yaml
             resource-name: ClusterRoleBinding/kube-state-metrics
         - kubernetes/create-or-update-resource:
-            get-rollout-status: true
+            get-rollout-status: false
             resource-file-path: ~/deployment/configs/state-metrics/service-account.yaml
             resource-name: ServiceAccount/kube-state-metrics                    
         - kubernetes/create-or-update-resource:
@@ -67,7 +67,7 @@
             resource-file-path: ~/deployment/configs/state-metrics/deployment.yaml
             resource-name: deployment/kube-state-metrics
         - kubernetes/create-or-update-resource:
-            get-rollout-status: true
+            get-rollout-status: false
             resource-file-path: ~/deployment/configs/state-metrics/service.yaml
             resource-name: Service/kube-state-metrics
 
