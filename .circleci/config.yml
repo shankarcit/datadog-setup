@@ -33,43 +33,43 @@
         - kubernetes/create-or-update-resource:
             get-rollout-status: true
             resource-file-path: ~/deployment/configs/datadog/cluster-agent-rbac.yaml
-            resource-name: cluster-agent-rbac
+            resource-name: ClusterRole/datadog-cluster-agent
         - kubernetes/create-or-update-resource:
             get-rollout-status: true
             resource-file-path: ~/deployment/configs/datadog/datadog-rbac.yaml
-            resource-name: datadog-rbac
+            resource-name: ClusterRole/datadog-agent
         - kubernetes/create-or-update-resource:
             get-rollout-status: true
             resource-file-path: ~/deployment/configs/datadog/dca-secret.yaml
-            resource-name: dca-secret
+            resource-name: secret/datadog-auth-token
         - kubernetes/create-or-update-resource:
             get-rollout-status: true
             resource-file-path: ~/deployment/configs/datadog/datadog-cluster-agent.yaml
-            resource-name: datadog-cluster-agent          
+            resource-name: deployment/datadog-cluster-agent          
         - kubernetes/create-or-update-resource:
             get-rollout-status: true
             resource-file-path: ~/deployment/configs/datadog/datadog-agent.yaml
-            resource-name: datadog-agent
+            resource-name: DaemonSet/datadog-agent
         - kubernetes/create-or-update-resource:
             get-rollout-status: true
             resource-file-path: ~/deployment/configs/state-metrics/cluster-role.yaml
-            resource-name: state-cluster-role
+            resource-name: ClusterRole/kube-state-metrics
         - kubernetes/create-or-update-resource:
             get-rollout-status: true
             resource-file-path: ~/deployment/configs/state-metrics/cluster-role-binding.yaml
-            resource-name: state-cluster-role-binding
+            resource-name: ClusterRoleBinding/kube-state-metrics
         - kubernetes/create-or-update-resource:
             get-rollout-status: true
             resource-file-path: ~/deployment/configs/state-metrics/service-account.yaml
-            resource-name: state-service-account  
-        - kubernetes/create-or-update-resource:
-            get-rollout-status: true
-            resource-file-path: ~/deployment/configs/state-metrics/service.yaml
-            resource-name: state-service                   
+            resource-name: ServiceAccount/kube-state-metrics                    
         - kubernetes/create-or-update-resource:
             get-rollout-status: true
             resource-file-path: ~/deployment/configs/state-metrics/deployment.yaml
-            resource-name: state-deployment
+            resource-name: deployment/kube-state-metrics
+        - kubernetes/create-or-update-resource:
+            get-rollout-status: true
+            resource-file-path: ~/deployment/configs/state-metrics/service.yaml
+            resource-name: Service/kube-state-metrics
 
   # Invoke jobs via workflows
   # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
