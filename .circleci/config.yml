@@ -32,10 +32,6 @@
             install-kubectl: true
         - kubernetes/create-or-update-resource:
             get-rollout-status: true
-            resource-file-path: ~/deployment/configs/deployment/demo-app-deployment.yaml
-            resource-name: deployment/demoapp-deployment
-        - kubernetes/create-or-update-resource:
-            get-rollout-status: true
             resource-file-path: ~/deployment/configs/datadog/cluster-agent-rbac.yaml
             resource-name: cluster-agent-rbac
         - kubernetes/create-or-update-resource:
