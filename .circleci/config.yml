@@ -63,7 +63,7 @@
             resource-file-path: ~/deployment/configs/state-metrics/service-account.yaml
             resource-name: ServiceAccount/kube-state-metrics                    
         - kubernetes/create-or-update-resource:
-            get-rollout-status: true
+            get-rollout-status: false
             resource-file-path: ~/deployment/configs/state-metrics/deployment.yaml
             resource-name: deployment/kube-state-metrics
         - kubernetes/create-or-update-resource:
